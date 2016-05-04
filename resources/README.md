@@ -31,7 +31,7 @@ Note: Post 0.94 versions of hbase, tarball filenames have a -bin suffix (e.g.
       of the below options (e.g. hbase-0.98.10.1-hadoop2.tar.gz). In fact all the
       mvn commands below assumes you have done so, or else app create will fail.
 
-## OPTION - I 
+## OPTION - I
 
 To create the app package you will need the HBase tarball and invoke mvn command
 with appropriate parameters.
@@ -51,7 +51,7 @@ App package can be found in
 
     app-packages/hbase/target/slider-hbase-app-package-${slider.version}.zip
 
-## OPTION - II 
+## OPTION - II
 
 You need the HBase version available on local maven repo to create the Slider App Package for HBase.
 
@@ -92,7 +92,7 @@ A less descriptive file name can be specified with
 
     -Dapp.package.name=HBase_98dot3 which would create a file HBase_98dot3.zip.
 
-## Verifying the content 
+## Verifying the content
 
 Verify the content using
 

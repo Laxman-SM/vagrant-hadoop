@@ -78,5 +78,5 @@ running_jobs    #openlava
 pending_jobs    #openlava
 ```
 
-## View metrics from Kibana 
+## View metrics from Kibana
 Access Kibana dashboards at http://node2:5601

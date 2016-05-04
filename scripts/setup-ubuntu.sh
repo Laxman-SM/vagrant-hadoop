@@ -16,8 +16,8 @@ function installUtilities {
 	echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >>/etc/apt/sources.list
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 	apt-get update -y
-	apt-get install -y curl zip r-base r-base-dev
-	curl -sSL https://get.docker.com/ubuntu/ | sh
+	apt-get install -y curl zip # r-base r-base-dev
+	# curl -sSL https://get.docker.com/ubuntu/ | sh
 
 }
 echo "setup ubuntu"

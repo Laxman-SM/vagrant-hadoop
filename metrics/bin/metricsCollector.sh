@@ -7,7 +7,7 @@ do
 	then
 	    /usr/local/metrics/bin/yarnApp.sh >> "/vagrant/metrics/data/yarn"
 	fi
-	
+
 	# openlava metrics:
 	# master_host app_id num_running_job num_pending_job
 	output=$(/usr/local/metrics/bin/openlavaJob.sh)

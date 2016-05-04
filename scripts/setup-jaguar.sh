@@ -12,16 +12,16 @@ function installJaguar {
 function installPostgresql {
     echo "install Postgresql"
 	echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >>  /etc/apt/sources.list.d/pgdg.list
-	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - 
+	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 	apt-get update
 	apt-get install postgresql-9.4 -y
 	service postgresql start 9.4
 	cp -f /vagrant/resources/pg_hba.conf /etc/postgresql/9.4/main/pg_hba.conf
-	
+
 	tar -xvf /vagrant/resources/jaguar-0.3.DEV.tar -C /usr/local/
 	ln -s /usr/local/jaguar-0.3.DEV /usr/local/jaguar
-	
-	
+
+
 }
 
 function setupEnvVars {

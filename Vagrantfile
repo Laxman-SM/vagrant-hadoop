@@ -2,7 +2,7 @@ Vagrant.require_version ">= 1.4.3"
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	numNodes = 5
+	numNodes = 4
 	r = numNodes..1
 	(r.first).downto(r.last).each do |i|
 		config.vm.define "node#{i}" do |node|
@@ -29,29 +29,29 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			end
 			node.vm.provision "shell", path: "scripts/setup-java.sh"
 			node.vm.provision "shell", path: "scripts/setup-hadoop.sh"
-			node.vm.provision "shell", path: "scripts/setup-hbase.sh"
-			node.vm.provision "shell", path: "scripts/setup-scala.sh"
-			node.vm.provision "shell", path: "scripts/setup-sparkR.sh"
+			#node.vm.provision "shell", path: "scripts/setup-hbase.sh"
+			#node.vm.provision "shell", path: "scripts/setup-scala.sh"
+			#node.vm.provision "shell", path: "scripts/setup-sparkR.sh"
 			node.vm.provision "shell" do |s|
 				s.path = "scripts/setup-hadoop-slaves.sh"
 				s.args = "-s 3 -t #{numNodes}"
 			end
-			node.vm.provision "shell" do |s|
-				s.path = "scripts/setup-hbase-slaves.sh"
-				s.args = "-s 3 -t #{numNodes}"
-			end
+			#node.vm.provision "shell" do |s|
+			#	s.path = "scripts/setup-hbase-slaves.sh"
+			#	s.args = "-s 3 -t #{numNodes}"
+			#end
 			if i == 2
 				node.vm.provision "shell", path: "scripts/setup-zookeeper.sh"
 			else
 				node.vm.provision "shell", path: "scripts/setup-zookeeper-client.sh"
 			end
-			if i == 2            
-                node.vm.provision "shell", path: "scripts/setup-slider.sh"
-				node.vm.provision "shell", path: "scripts/setup-spark.sh"
-				node.vm.provision "shell", path: "scripts/setup-elk.sh"
-				node.vm.provision "shell", path: "scripts/setup-jaguar.sh"
-			end
-			node.vm.provision "shell", path: "scripts/setup-metrics.sh"
+			#if i == 2
+        #node.vm.provision "shell", path: "scripts/setup-slider.sh"
+				#node.vm.provision "shell", path: "scripts/setup-spark.sh"
+				#node.vm.provision "shell", path: "scripts/setup-elk.sh"
+				#node.vm.provision "shell", path: "scripts/setup-jaguar.sh"
+			#end
+			#node.vm.provision "shell", path: "scripts/setup-metrics.sh"
 		end
 	end
 end
