@@ -8,7 +8,7 @@ function installLocalJava {
 
 function setupJava {
 	echo "setting up java"
-	ln -s /usr/local/jdk1.7.0_76 /usr/local/java
+	ln -s /usr/local/jdk1.8.0_91 /usr/local/java
 	ln -s /usr/local/java/bin/java /usr/bin/java
 	ln -s /usr/local/java/bin/javac /usr/bin/javac
 	ln -s /usr/local/java/bin/jar /usr/bin/jar
@@ -26,7 +26,7 @@ function installJava {
 	if resourceExists $JAVA_ARCHIVE; then
 		echo "installing open jdk from local file"
 	else
-		wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u76-b13/jdk-7u76-linux-x64.tar.gz" -O /vagrant/resources/$JAVA_ARCHIVE
+		wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz" -O /vagrant/resources/$JAVA_ARCHIVE
 	fi
 
 	installLocalJava

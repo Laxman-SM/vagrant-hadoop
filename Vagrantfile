@@ -2,7 +2,7 @@ Vagrant.require_version ">= 1.4.3"
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	numNodes = 4
+	numNodes = 3
 	r = numNodes..1
 	(r.first).downto(r.last).each do |i|
 		config.vm.define "node#{i}" do |node|
@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			node.vm.provider "virtualbox" do |v|
 			    v.name = "node#{i}"
 			    v.customize ["modifyvm", :id, "--memory", "1536"]
-			    if i == 2
+			    if i == 1
 			        v.customize ["modifyvm", :id, "--memory", "2048"]
 			    end
 			end
@@ -34,19 +34,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			#node.vm.provision "shell", path: "scripts/setup-sparkR.sh"
 			node.vm.provision "shell" do |s|
 				s.path = "scripts/setup-hadoop-slaves.sh"
-				s.args = "-s 3 -t #{numNodes}"
+				s.args = "-s 2 -t #{numNodes}"
 			end
 			#node.vm.provision "shell" do |s|
 			#	s.path = "scripts/setup-hbase-slaves.sh"
 			#	s.args = "-s 3 -t #{numNodes}"
 			#end
-			if i == 2
+			if i == 1
 				node.vm.provision "shell", path: "scripts/setup-zookeeper.sh"
 			else
 				node.vm.provision "shell", path: "scripts/setup-zookeeper-client.sh"
 			end
 			#if i == 2
-        #node.vm.provision "shell", path: "scripts/setup-slider.sh"
+                #node.vm.provision "shell", path: "scripts/setup-slider.sh"
 				#node.vm.provision "shell", path: "scripts/setup-spark.sh"
 				#node.vm.provision "shell", path: "scripts/setup-elk.sh"
 				#node.vm.provision "shell", path: "scripts/setup-jaguar.sh"

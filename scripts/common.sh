@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #java
-JAVA_ARCHIVE=jdk-7u76-linux-x64.tar.gz
+JAVA_ARCHIVE=jdk-8u91-linux-x64.tar.gz
 #ant
 ANT_ARCHIVE=apache-ant-1.9.6-bin.zip
 ANT_MIRROR_DOWNLOAD=http://mirror.sdunix.com/apache/ant/binaries/$ANT_ARCHIVE
@@ -25,7 +25,7 @@ ZOOKEEPER_PREFIX=/usr/local/zookeeper
 ZOOKEEPER_CONF=$ZOOKEEPER_PREFIX/conf
 ZOOKEEPER_VERSION=zookeeper-3.4.6
 ZOOKEEPER_ARCHIVE=$ZOOKEEPER_VERSION.tar.gz
-ZOOKEEPER_MIRROR_DOWNLOAD=http://apache.mirror.rafal.ca/zookeeper/stable/$ZOOKEEPER_ARCHIVE
+ZOOKEEPER_MIRROR_DOWNLOAD=http://apache.claz.org/zookeeper/zookeeper-3.4.6/$ZOOKEEPER_ARCHIVE
 ZOOKEEPER_RES_DIR=/vagrant/resources/zookeeper
 #scala
 SCALA_VERSION=scala-2.11.6
