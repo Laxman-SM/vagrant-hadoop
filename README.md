@@ -1,6 +1,10 @@
 vagrant-hadoop-2.7.1
 ================================
 
+# Notes
+
+This version of vagrant-hadoop is customized to only use 3 nodes and only setup YARN + HDFS + ZK.
+
 # Introduction
 
 Vagrant project to spin up a cluster of 6 virtual machines with Hadoop v2.7.1, Zookeeper v3.4.6, Spark v1.5.2, SparkR and Slider 0.60.0 incubating (with application packages of hbase v1.1.1 and OpenLava v2.2). Java/Ant/Maven/Scala/R/Docker environment is setup in all the nodes. A metric watch baesd on ELK is installed to collect metrics of YARN and OpenLava.
@@ -376,8 +380,8 @@ To review per-container launch environment, increase yarn.nodemanager.delete.deb
 You can check the following URLs to monitor the Hadoop daemons.
 
 1. [NameNode] (http://10.211.55.101:50070/dfshealth.html)
-2. [ResourceManager] (http://10.211.55.102:8088/cluster)
-3. [JobHistory] (http://10.211.55.102:19888/jobhistory)
+2. [ResourceManager] (http://10.211.55.101:8088/cluster)
+3. [JobHistory] (http://10.211.55.101:19888/jobhistory)
 4. [Spark] (http://node2:4040)
 
 # Vagrant boxes
