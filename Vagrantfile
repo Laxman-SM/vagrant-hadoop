@@ -45,6 +45,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			else
 				node.vm.provision "shell", path: "scripts/setup-zookeeper-client.sh"
 			end
+
+			if i == 1
+				node.vm.provision "shell", path: "scripts/start-hadoop.sh"
+			end
 			#if i == 2
                 #node.vm.provision "shell", path: "scripts/setup-slider.sh"
 				#node.vm.provision "shell", path: "scripts/setup-spark.sh"
