@@ -3,7 +3,8 @@ vagrant-hadoop-2.7.1
 
 # Notes
 
-This version of vagrant-hadoop is customized to only use 3 nodes and only setup YARN + HDFS + ZK.
+* This version of vagrant-hadoop is customized to only use 3 nodes and only setup YARN + HDFS + ZK.
+* **In addition to that this version start Hadoop cluster during provisioning.**
 
 # Introduction
 
